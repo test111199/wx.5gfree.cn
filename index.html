@@ -98,8 +98,11 @@
 								
 			});
 		
-		function chechUsim()	
+		function checkUsim()	
 		{
+		
+alert("收到submit，进入checkUsim函数"); 	
+	
 		    var account=document.getElementById("accMobile").value;
             var iccid=document.getElementById("chkIccid").value;
 /*            var functionID=document.getElementById("selFunction").value;           */
@@ -107,8 +110,7 @@
             var iccidLen=document.getElementById("chkIccid").value.length;
             
             var reg=/^[1-9]\d*$|^0$/; 
-
-alert(account);   
+  
             
             if(reg.test(account)!=true or reg.test(iccid)!=true){
                 alert("输入账号或ICCID有误，请检查是否均为正确格式");   
