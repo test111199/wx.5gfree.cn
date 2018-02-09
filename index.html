@@ -35,7 +35,7 @@
 		<div class="container">
 			<div class="header">
 				<div class="banner-left"><!-- <a href="https://www.5gfree.cn/" class="logo"> -->
-                    <img src="img/drpeng_logo.png" height="30px">  <!--  </a>  -->
+                    <img src="img/2DP_logo.png" height="30px">  <!--  </a>  -->
                 </div>
             </div>
             <div class="banner-info">
@@ -54,18 +54,18 @@
                                 <input name="chkIccid" id ="chkIccid" type="text" required="yes" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请输物联网卡ICCID的20位数字';}" value="请输物联网卡ICCID的20位数字" />
                             </div>                               
                         </div>
+<!--
                         <div class="panel panel-verydanger">
                             <div class="panel-heading">请选择您要的功能 </div>
                             <div class="panel-body">
-<!--
                                 <select name="selFunction" id ="selFunction">
 	              			        <option value="1">查询周期内使用量</option>
                       			    <option value="2">查询设备详细信息</option>
                 		        </select>
--->
                 		        <input type="hidden" name="selFunction" id ="selFunction" value="1" />
                             </div>                               
                         </div>
+-->
                         <input type="submit" value="提交" >
                     </form>
                 </div>
@@ -102,11 +102,13 @@
 		{
 		    var account=document.getElementById("accMobile").value;
             var iccid=document.getElementById("chkIccid").value;
-            var functionID=document.getElementById("selFunction").value;           
+/*            var functionID=document.getElementById("selFunction").value;           */
             var accountLen=document.getElementById("accMobile").value.length;
             var iccidLen=document.getElementById("chkIccid").value.length;
             
             var reg=/^[1-9]\d*$|^0$/; 
+
+alert(account);   
             
             if(reg.test(account)!=true or reg.test(iccid)!=true){
                 alert("输入账号或ICCID有误，请检查是否均为正确格式");   
