@@ -2,7 +2,7 @@
 define("TOKEN", "2dp_weixin");
 require_once("libs/init.php");
 
-$fp = fopen("/tmp/5gfree.cn/wx_post_".$dateStr.".txt", "a+");
+$fp = fopen("/tmp/5gfree.cn/wx_post.txt", "a+");
 fputs($fp, "录入信息时间：$dateTime \n");
 
 if($_GET["echostr"] != "")
