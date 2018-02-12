@@ -1,10 +1,16 @@
 <?php
 define("TOKEN", "2dp_weixin");
 require_once("libs/init.php");
+
+$fp = fopen("/tmp/5gfree.cn/wx_post_".$dateStr.".txt", "a+");
+fputs($fp, "录入信息时间：$dateTime \n");
+
 if($_GET["echostr"] != "")
 {
     $wechatObj = new wechatCallbackapiTest();
     $wechatObj->valid();
+fputs($fp, "建立微信链接失败 \n");    
+
 }
 else
 {
@@ -21,15 +27,14 @@ else
     $content = trimstr($wx_arr['Content']);
 
 //添加微信访问记录    
-$fp = fopen("/tmp/5gfree.cn/wx_post_".$dateStr.".txt", "a+");
+
 fputs($fp, $post_data);
-fputs($fp, "录入信息时间：$dateTime \n");
 fputs($fp, "MsgType: $msgtype \n");
 fputs($fp, "Event: $event\n");
 fputs($fp, "EventKey: $eventkey\n");
 fputs($fp, "FromUserName: $openid\n");
 fputs($fp, "Content: $content\n");
-fclose($fp);
+
 
 echo $event."<br>\n";
 
@@ -52,6 +57,9 @@ echo $event."<br>\n";
             <MsgType><![CDATA[text]]></MsgType>
             <Content><![CDATA[欢迎进入鹏博士集客物联网世界！]]></Content>
             </xml>";
+            
+fputs($fp, "用户关注微信账号 \n");    
+
         echo $data;
     }
 /*
@@ -73,6 +81,8 @@ echo $event."<br>\n";
                     <CreateTime>$createtime</CreateTime>
                     <MsgType><![CDATA[transfer_customer_service]]></MsgType>
                     </xml>";
+fputs($fp, "用户点击服务按键 \n");      
+               
             echo $data;
         }        
 /*
@@ -114,8 +124,8 @@ echo $event."<br>\n";
                     <Content><![CDATA[您好，欢迎您使用鹏博士集客物联网查询瓶平台： \n<a href='http://1.gwmk.sinaapp.com/qustion1-1.html'>。$openid - $content
  ]]></Content>
                     </xml>";
-            echo $data; 
-          
+fputs($fp, "用户发送指定信息 \n");                     
+            echo $data;           
         }
         else
         {
@@ -126,6 +136,7 @@ echo $event."<br>\n";
             <MsgType><![CDATA[text]]></MsgType>
             <Content><![CDATA[非常欢迎您使用我们的平台]]></Content>
             </xml>";
+fputs($fp, "用户发送任意信息 \n");   
             echo $data;
         }
         
@@ -136,6 +147,8 @@ echo $event."<br>\n";
     fclose($fp);
 */
 }
+fclose($fp);
+
 class wechatCallbackapiTest
 {
 	public function valid()
