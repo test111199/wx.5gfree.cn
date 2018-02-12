@@ -104,8 +104,8 @@ echo $event."<br>\n";
     {
         if($content == "你好")
         {
-            $db->query("DELETE FROM service_user WHERE openid = '$openid'");
-            $db->query("INSERT INTO service_user VALUES(NULL, '$openid', '$createtime', 0)");
+//            $db->query("DELETE FROM service_user WHERE openid = '$openid'");
+//            $db->query("INSERT INTO service_user VALUES(NULL, '$openid', '$createtime', 0)");
             $data ="<xml>
                     <ToUserName><![CDATA[$openid]]></ToUserName>
                     <FromUserName><![CDATA[$weixinid]]></FromUserName>
