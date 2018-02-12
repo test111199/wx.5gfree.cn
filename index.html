@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>2DP IoT USIM service</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Manufactory Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+      function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){		
+          event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+      });
+    </script>
+<!-- end-smoth-scrolling -->
+<script type="text/javascript">
+	function checkInput(){
+// alert("进入函数checkInput");  			
+		    var account=document.getElementById("accMobile").value;
+            var iccid=document.getElementById("chkIccid").value;
+ //           var functionID=document.getElementById("selFunction").value;        
+            var accountLen=document.getElementById("accMobile").value.length;
+            var iccidLen=document.getElementById("chkIccid").value.length;
+            
+           var reg=/^[1-9]\d*$|^0$/; 
+              
+            if(reg.test(account)!=true or reg.test(iccid)!=true){
+                alert("输入账号或ICCID有误，请检查是否均为正确格式");   
+            }
+            else 
+            if(accountLen!=11 or iccidLen!=20 ){
+                alert("输入账号或ICCID有误，请检查位数是否正确");
+            }
+ //           else{         
+ //          $.ajax({
+//                    type: 'post',
+//                    url: "http://api.5gfree.cn:8090/checkUsim.php",
+//                    async:false,
+//                    cache:false,
+//                    data:$('#chkUsim').serialize(),
+//                  dataType: 'json',
+//                    success: function(data) {
+//alert("进入ajax success 函数内部\n 发送参数："+ functionID + "/"+iccid);               
+//                        alert(data);  
+//                    },
+//                    error: function() {
+//                        alert("数据库链接异常，请联系客服人员。");
+ //                   }
+ //               });  
+ //           }                  
+		} 
+</script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  	<!-- banner -->
+  	<div class="banner">
+		<div class="container">
+			<div class="header">
+				<div class="banner-left"><!-- <a href="https://www.5gfree.cn/" class="logo"> -->
+                    <img src="img/2DP_logo.png" height="30px">  <!--  </a>  -->
+                </div>
+            </div>
+            <div class="banner-info">
+                <div class="banner-info-left">
+                    <h3>物联网卡信息查询</h3>
+                    <form name="chkUsim" id="chkUsim" action="checkUsim.php" method="post" >
+                        <div class="panel panel-verydanger">
+                            <div class="panel-heading">请输入您的电话号码 </div>
+                            <div class="panel-body">
+                                <input name="accMobile" id ="accMobile" type="text" required="yes" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请输您登平台时存留的手机号码11位数字';}" value="请输您登平台时存留的手机号码" />
+                            </div>                           
+                        </div>
+                        <div class="panel panel-verydanger">
+                            <div class="panel-heading">请输入您Usim卡的ICCID </div>
+                            <div class="panel-body">
+                                <input name="chkIccid" id ="chkIccid" type="text" required="yes" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请输物联网卡ICCID的20位数字';}" value="请输物联网卡ICCID的20位数字" />
+                            </div>                               
+                        </div>
+<!--                        <div class="panel panel-verydanger">
+                            <div class="panel-heading">请选择您要的功能 </div>
+                                <div class="panel-body">
+                                    <select name="selFunction" id ="selFunction">
+	              			            <option value="1">查询周期内使用量</option>
+                      			        <option value="2">查询设备详细信息</option>
+                		            </select>
+                                </div>                               
+                            </div> -->
+                        <input type="submit" value="提交" onClick ="checkInput()" > 
+                    </form>
+                <div class="banner-info-right">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer-left">
+			    <p>Copyright &copy; 2018. 2DP-IoT Project team  All rights reserved.</p>
+			</div>
+			<div class="footer-right">
+			</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+		
+    </script>
+  </body>	
+</html>
