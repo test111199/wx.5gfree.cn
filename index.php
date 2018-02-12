@@ -15,7 +15,7 @@ fputs($fp, "建立微信链接失败 \n");
 else
 {
     $dateStr = date(Ymd);
-    $dateTime = date (Ymd H:i:s)
+    $dateTime = date ("Ymd H:i:s")
     $createtime = time();
     $post_data = file_get_contents("php://input");
     $wx_arr = xmltoarray($post_data);
