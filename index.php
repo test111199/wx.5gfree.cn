@@ -123,7 +123,7 @@ fputs($fp, "用户点击服务按键 \n");
                     <FromUserName><![CDATA[$weixinid]]></FromUserName>
                     <CreateTime>$createtime</CreateTime>
                     <MsgType><![CDATA[text]]></MsgType>
-                    <Content><![CDATA[您好，欢迎您使用鹏博士集客物联网查询平台： \n$openid - $content]></Content>
+                    <Content><![CDATA[您好，欢迎您使用鹏博士集客物联网查询平台： \n $openid - $content]]></Content>
                     </xml>";
 fputs($fp, "用户发送指定信息 \n");                     
             echo $data;           
