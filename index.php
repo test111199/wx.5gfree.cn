@@ -9,6 +9,7 @@ if($_GET["echostr"] != "")
 else
 {
     $dateStr = date(Ymd);
+    $dateTime = date (Ymd H:i:s)
     $createtime = time();
     $post_data = file_get_contents("php://input");
     $wx_arr = xmltoarray($post_data);
@@ -22,6 +23,7 @@ else
 //添加微信访问记录    
 $fp = fopen("/tmp/5gfree.cn/wx_post_".$dateStr.".txt", "a+");
 fputs($fp, $post_data);
+fputs($fp, "录入信息时间：$dateTime \n");
 fputs($fp, "MsgType: $msgtype \n");
 fputs($fp, "Event: $event\n");
 fputs($fp, "EventKey: $eventkey\n");
