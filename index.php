@@ -123,8 +123,7 @@ fputs($fp, "用户点击服务按键 \n");
                     <FromUserName><![CDATA[$weixinid]]></FromUserName>
                     <CreateTime>$createtime</CreateTime>
                     <MsgType><![CDATA[text]]></MsgType>
-                    <Content><![CDATA[您好，欢迎您使用鹏博士集客物联网查询瓶平台： \n<a href='http://1.gwmk.sinaapp.com/qustion1-1.html'>。$openid - $content
- ]]></Content>
+                    <Content><![CDATA[您好，欢迎您使用鹏博士集客物联网查询平台： \n$openid - $content]></Content>
                     </xml>";
 fputs($fp, "用户发送指定信息 \n");                     
             echo $data;           
@@ -136,7 +135,7 @@ fputs($fp, "用户发送指定信息 \n");
             <FromUserName><![CDATA[$weixinid]]></FromUserName>
             <CreateTime>$createtime</CreateTime>
             <MsgType><![CDATA[text]]></MsgType>
-            <Content><![CDATA[非常欢迎您使用我们的平台]]></Content>
+            <Content><![CDATA[感谢您使用我们的平台]]></Content>
             </xml>";
 fputs($fp, "用户发送任意信息 \n");   
             echo $data;
