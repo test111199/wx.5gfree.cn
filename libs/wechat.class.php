@@ -14,12 +14,20 @@
         {
             $accessToken = $this->getAccessToken();//获取access_token
             $menuPostString = 
-            '{//构造POST给微信服务器的菜单结构体
-                "button":[
-                    {"type":"view", "name":"查流量", "key":"V1000"},
-                    {"type":"click", "name":"找客服", "key":"V2000"}
-                ]
-            }';
+            '{
+                "button": [
+                    {
+                        "type": "view", 
+                        "name": "查流量", 
+            "url": "http://api.5gfree.cn/index.html"
+        }, 
+        {
+            "type": "click", 
+            "name": "找客服", 
+            "key": "V2000"
+        }
+    ]
+}';
 /*                "button":[
                 {"name":"常用",
                     "sub_button":[
