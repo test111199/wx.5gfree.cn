@@ -125,10 +125,20 @@
     
     $restData = apiCurlGet($restURL,$headerArray); 
 //    $restData = json_decode($rest,true);
-   
-    $DataUsage = $restData['ctdDataUsage'];  
-    $usedDataMB =  $DataUsage/1024/1024;
-    echo "<h3>用户当前使用流量为：".number_format($usedDataMB,2)."MB</h3>";
+    $ErrorCode = $restData['errorCode'];
+    if ($ErrorCode > 0){
+        echo "<h3> $ErrorCode </h3>";
+    }
+    else{    
+        $CurrentPlan = $restData['ratePlan'];
+        $CurrentStatus = $restData['status'];    
+        $NumberImsi = $restData['imsi'];
+        $NumberMsisdn = $restData['msisdn'];    
+        $DeviceImei = $restData['imei'];
+        $DataUsage = $restData['ctdDataUsage'];  
+        $usedDataMB =  $DataUsage/1024/1024;
+        echo "<h3>用户当前使用流量为：".number_format($usedDataMB,2)."MB</h3>";
+    }
 //  var_dump(0);
 //exit;
     
