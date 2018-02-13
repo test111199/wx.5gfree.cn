@@ -34,7 +34,7 @@
             var accountLen=document.getElementById("accMobile").value.length;
             var iccidLen=document.getElementById("chkIccid").value.length;
             
-           var reg=/^[1-9]\d*$|^0$/; 
+           var reg='/^[1-9]\d*$|^0$/'; 
               
             if(reg.test(account)!=true or reg.test(iccid)!=true){
                 alert("输入账号或ICCID有误，请检查是否均为正确格式");   
@@ -71,7 +71,7 @@
 		<div class="container">
 			<div class="header">
 				<div class="banner-left"><!-- <a href="https://www.5gfree.cn/" class="logo"> -->
-                    <img src="img/2DP_logo.png" height="30px">  <!--  </a>  -->
+                    <img style="display:block;width:100%;" src="img/2DP_logo.png" height="30px">  <!--  </a>  -->
                 </div>
             </div>
             <div class="banner-info">
