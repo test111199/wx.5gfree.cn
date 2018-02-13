@@ -65,9 +65,7 @@
 //sim_card_inst 表，manage_state 1待开卡 2 已开卡未使用 3 正在使用 4 已销卡
 // $return_msg 0/1/2/3/4
     $return_msg = array("ok|0000",
-                                    "错误码1-您还不是我们的用户，请联系客服人员！",
-                                    "错误码2-您输入的物联网卡ICCID未查询到，请联系客服人员！",
-                                    "错误码3-您输入的物联网卡ICCID存在问题，请联系客服人员！",
+                                    "错误码1-您还不是我们的用户，请联系客服人员！",,
                                     "JapserData"                                 
                                     );
     
@@ -178,8 +176,8 @@
         return array($res_status,$res_simICCID,$res_simUserID,$res_simOrgID);
     }
 ?>
-
                 <div class="banner-info-right">
+                    <input type="button" value="返回" onclick="javascrtpt:window.location.href='http://wx.5gfree.cn/index.html'">
                 </div>
             </div>
         </div>
