@@ -69,8 +69,8 @@
                                     "JapserData"                                 
                                     );
     
-    $strsql = "SELECT userID,userOrgID,userLevel FROM IoT_User  WHERE userAccount = '$userAccount' ";
-    list($userStatus,$userID,$userOrgID,$userLevel) = checkUser($strsql);
+    $strsql = "SELECT userID,userOrgID,userRole FROM IoT_User  WHERE userAccount = '$userAccount' ";
+    list($userStatus,$userID,$userOrgID,$userRole) = checkUser($strsql);
  
 // echo "<h3>得到CheckUser结果 ".$userStatus."+".$userID."+".$userOrgID."+".$userLevel."</h3>";
     
@@ -149,14 +149,14 @@
             $data = mysql_fetch_array($res);
             $res_userID = $data['userID'];
             $res_userOrgID = $data['userOrgID'];
-            $res_userLevel = $data['userLevel'];
+            $res_userRole = $data['userRole'];
             $res_status = 1;
         }else
         {
             $res_status = 0;
         }
 //echo "进入用户检验程序，得到结果".$res_status."！";
-        return array($res_status,$res_userID,$res_userOrgID,$res_userLevel);
+        return array($res_status,$res_userID,$res_userOrgID,$res_userRole);
     }
 
 //查询用户输入ICCID在数据库中状态, 并返回ICCID状态和所属用户及组织
